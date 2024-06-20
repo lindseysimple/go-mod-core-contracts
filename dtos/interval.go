@@ -15,7 +15,7 @@ type Interval struct {
 	Name        string `json:"name" validate:"edgex-dto-none-empty-string"`
 	Start       string `json:"start,omitempty" validate:"omitempty,edgex-dto-interval-datetime"`
 	End         string `json:"end,omitempty" validate:"omitempty,edgex-dto-interval-datetime"`
-	Interval    string `json:"interval" validate:"required,edgex-dto-duration"`
+	Interval    string `json:"interval" validate:"required,edgex-dto-duration=10ms"` // min/max can be defined as params, ex. edgex-dto-duration=10ms0x2C24h
 }
 
 // NewInterval creates interval DTO with required fields
